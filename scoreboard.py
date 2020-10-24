@@ -16,10 +16,7 @@ class ScoreBoard():
         self.text_color = (30, 30, 30)
         self.font = pygame.font.SysFont(None, 36)
         # 准备初始化得分图像
-        self.prep_score()
-        self.prep_high_score()
-        self.prep_level()
-        self.prep_ship()
+        self.prep_image()
 
     def prep_score(self):
         '''将得分转换为一幅渲染的图像'''
@@ -62,6 +59,12 @@ class ScoreBoard():
             ship.rect.x=10+ship_number*ship.rect.width
             ship.rect.y=10
             self.ships.add(ship)
+
+    def prep_image(self):
+        self.prep_score()
+        self.prep_high_score()
+        self.prep_level()
+        self.prep_ship()
 
     def show_score(self):
         '''在屏幕上显示得分'''

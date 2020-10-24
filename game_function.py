@@ -66,10 +66,7 @@ def start_game(ai_settings, screen, aliens, ship, bullets, stats, sb):
     # 隐藏光标
     pygame.mouse.set_visible(False)
     stats.reset_stats()
-    sb.prep_score()
-    sb.prep_level()
-    sb.prep_high_score()
-    sb.prep_ship()
+    sb.prep_image()
     stats.game_active = True
     # 清空外星人列表和子弹列表
     bullets.empty()
