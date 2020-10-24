@@ -37,6 +37,8 @@ def check_event(ai_settings, screen, ship, bullets, aliens, play_button, stats, 
     '''响应按键和鼠标事件'''
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            with open('alien_invasion/highscore.txt','w') as highscore_file:
+                highscore_file.write(str(stats.high_score))
             sys.exit()
 
         elif event.type == pygame.KEYDOWN:
@@ -137,10 +139,6 @@ def create_fleet(ai_settings, screen, aliens, ship):
     number_rows = get_number_rows(
         ai_settings, alien.rect.height, ship.rect.height)
 
-    # 创建第一行外星人
-    # for alien_number in range(number_alien_x):
-    #     #创建一个外星人并将其加入当前行
-    #     create_alien(ai_settings,screen,alien_number,aliens,number_rows)
     # 创建外星人群
     for row_number in range(number_rows):
         for alien_number in range(number_alien_x):
